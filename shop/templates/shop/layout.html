@@ -1,0 +1,30 @@
+<!-- shop/templates/shop/layout.html -->
+{% extends '../layout.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ block.super }} shop
+{% endblock %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'shop/shop.css' %}" />
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <table class="pull-left mb-4">
+        <tbody>
+            <tr>
+            <td><img src="{% static 'shop/com_shin.png' %}" alt="shop logo image"></td>
+            <td><h2 class="ml-4 pt-4">Shop in logistex site </h2></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block extra_body %}
+    {{ block.super }}
+    <script src="{% static 'shop/shop.js' %}"></script>
+{% endblock %}

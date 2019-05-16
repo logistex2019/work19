@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}logistex{% endblock %}</title>
+
+    {% block extra_head %}  {# 스타일시트 등을 위하여 #}
+        <link rel="stylesheet" href="{% static 'main.css' %}" />
+    {% endblock %}
+
+</head>
+<body>
+    {% block content %}
+        <img src="{% static 'phd_shin.png' %}" alt="main logo image">
+        <h1>logistex site</h1>
+{#        <p style="color: darkred">#}
+{#            !!! <br/>#}
+{#            부모가 정의한 기본 내용은 자식이 지정하는 내용으로 덮어쓰기 된다! <br/>#}
+{#            자식 쪽에서 block.super 필터로 부모가 정의한 기본 내용을 가져올 수 있다!<br/>#}
+{#            !!!<br/>#}
+{#        </p>#}
+    {% endblock %}
+
+    <hr/>
+    No &copy;! <img src="http://www.pngmart.com/files/8/Copyleft-PNG-Transparent-Picture.png" height="42" width="42" style="margin-bottom: -5px" />2019. logistex.
+
+    {% block extra_body %}  {# 자바스크립트 등을 위하여 #}
+        <script src="{% static 'main.js' %}"></script>
+    {% endblock %}
+</body>
+</html>
